@@ -5,11 +5,16 @@ This is the repository for the personal site of Ben Lind. It is currently in the
 ## Technology
 The back end of this website will be written in PHP. This PHP will be closely coupled with the HTML, CSS, and Javascript on the front end, but I hope to maintain a level of separation between the back and front ends of the site. I do not plan on using a full-fledged MVC layout because the scope of this site is small, and I do not have much database data to work with.
 
+I plan on implementing a one-page layout. With the small scope of the project, I don't see a need for multiple pages, and using a single page will give me some interesting opportunities for adding javascript functionality.
+
+**Question:** I wonder, without using a web MVC framework, how can I easily separate logic from content in my project?
+
 ## Purpose and Features
 I am a web developer, currently on a freelance level but soon on a professional level as well. This website will primarily be a place where I can showcase some of my web development work.
 
 Here are some of the specific features that I expect to be on the site:
 
+- Basic information about myself
 - A list of websites that I have created, along with descriptions and screenshots
 - A contact form where people can request service
 - A resume/cv
