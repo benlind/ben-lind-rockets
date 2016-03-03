@@ -1,26 +1,26 @@
 {
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.2.0"
+  },
   "name": "personal-site",
   "version": "1.0.0",
   "description": "The personal site of Ben Lind",
   "main": "gulpfile.js",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-sass": "^2.1.0"
-  },
+  "dependencies": {},
   "scripts": {
-    "start": "gulp",
-    "build": "gulp sass"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/benlind/personal-site.git"
+    "url": "git+https://github.com/benlind/personal-site.git"
   },
   "author": "Ben Lind <mail@benlind.com>",
   "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "gulp-autoprefixer": "^3.1.0"
-  }
+  "bugs": {
+    "url": "https://github.com/benlind/personal-site/issues"
+  },
+  "homepage": "https://github.com/benlind/personal-site#readme"
 }

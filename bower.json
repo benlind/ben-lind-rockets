@@ -1,19 +1,14 @@
 {
   "name": "personal-site",
-  "version": "1.0.0",
+  "version": "1.0",
   "authors": [
     "Ben Lind <mail@benlind.com>"
   ],
   "description": "The personal site of Ben Lind",
   "main": "index.php",
   "license": "MIT",
-  "homepage": "http://benlind.com",
-  "dependencies": {
-    "foundation-sites": "~6.1.2",
-    "motion-ui": "~1.1.0",
-    "foundation-sites": "~6.2.0",
-    "motion-ui": "~1.2.2"
-  },
+  "homepage": "benlind.com",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -21,5 +16,8 @@
     "test",
     "tests"
   ],
-  "private": true
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.6",
+    "fontawesome": "~4.5.0"
+  }
 }
