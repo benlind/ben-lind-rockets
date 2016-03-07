@@ -1,23 +1,20 @@
 {
-  "name": "personal-site",
-  "version": "1.0",
-  "authors": [
-    "Ben Lind <mail@benlind.com>"
-  ],
-  "description": "The personal site of Ben Lind",
-  "main": "index.php",
-  "license": "MIT",
-  "homepage": "benlind.com",
+  "name": "yeoman-personal-site",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "bootstrap-sass-official": "~3.3.6",
-    "fontawesome": "~4.5.0"
+    "bootstrap-sass": "~3.3.5"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
   }
 }
