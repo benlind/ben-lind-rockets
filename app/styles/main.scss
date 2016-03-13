@@ -9,6 +9,10 @@ $icon-font-path: '../fonts/';
 // endbower
 
 
+$link-hover-bg: darken($brand-primary, 10%);
+$link-border-color: darken($brand-primary, 20%);
+
+
 /**********************************************
  * GENERAL
  */
@@ -16,42 +20,49 @@ $icon-font-path: '../fonts/';
 ///// Elements /////
 
 body {
-  padding-top: $navbar-height;
+  font-weight: 100;
+  padding: $navbar-height 0 50px;
 }
 
-h1 {
-  margin-bottom: 30px;
-}
+h1 { margin-bottom: 30px; }
+h3 { margin-bottom: 15px; font-weight: bold; }
 
 a {
-  background: $brand-primary;
-  border-bottom: 1px solid darken($brand-primary, 10%);
-  color: $gray-base;
-  font-weight: normal;
-  padding: 1px 4px;
-  text-decoration: none;
+  @extend .link-3d;
 
-  &:hover, &:active, &:focus {
-    background: darken($brand-primary, 3%);
-    color: $gray-base;
-    text-decoration: none;
-  }
+  font-weight: normal;
+  padding: 2px 4px;
 }
 
-section { margin-top: 70px; }
+section { padding-top: 70px; }
 
 
 ///// Classes /////
-
-.script {
-  font-family: "Droid Serif";
-}
 
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+.script {
+  font-family: "Droid Serif";
+}
+
+.link-3d {
+  background: $brand-primary;
+  box-shadow: 0 2px 0 $link-border-color;
+  color: $gray-base;
+  text-decoration: none;
+  transition: background .2s ease;
+
+  &:hover, &:active, &:focus {
+    background: $link-hover-bg;
+    color: $gray-base;
+    outline: none !important;
+    text-decoration: none;
+  }
 }
 
 .text-primary { color: $brand-primary; }
@@ -63,6 +74,74 @@ section { margin-top: 70px; }
 .relative { position: relative; }
 
 .buffer-top { margin-top: 80px; }
+
+.text-large { font-size: ceil(($font-size-base * 1.2)); }
+.text-light { font-weight: 100; }
+
+.arrow-down-btn {
+  border-bottom-width: 0;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 $link-border-color;
+  padding: 5px 10px;
+  position: relative;
+
+  // Triangles
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $brand-primary;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+    transition: border 0.2s ease;
+  }
+  &:hover::after {
+    border-top-color: $link-hover-bg;
+  }
+
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid $link-border-color;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    margin-left: -12px;
+    transition: border 0.2s ease;
+  }
+}
+
+.section-title {
+  border-bottom: 5px solid $gray-dark;
+  margin-top: 0;
+  padding-bottom: 25px;
+}
+
+.btn-primary {
+  @extend .link-3d;
+
+  box-shadow: 0 3px 0 $link-border-color;
+  color: white;
+  text-shadow: 0 1px 0 darken($link-hover-bg, 10%);
+
+  &:hover, &:focus, &:active {
+    color: white;
+  }
+  &:focus {
+    box-shadow: 0 3px 0 $link-border-color, 0 0 10px 1px #009CFF;
+  }
+}
+
+.panel .col-sm-4:not(:first-child){
+  margin-top: 30px;
+}
 
 
 ///// Icons /////
@@ -83,9 +162,31 @@ section { margin-top: 70px; }
   right: -25px;
 }
 
-h2 .glyphicon {
-  margin-right: 20px;
+h2 .glyphicon { margin-right: 15px; }
+
+.icon-large { font-size: 80px; }
+.icon-center { display: block; text-align: center; }
+
+
+///// Social /////
+
+.social { margin-bottom: 20px; }
+.social a {
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  display: inline-block;
+  padding: 0;
+  padding: 0 10px 0 10px;
+  border: 0;
 }
+.social img {
+  margin-right: 3px;
+  opacity: .6;
+  transition: opacity 0.2s ease;
+  width: 40px;
+}
+.social a:hover img { opacity: 1; }
 
 
 
@@ -101,6 +202,10 @@ h2 .glyphicon {
   a {
     background: transparent;
     border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all .2s ease;
+    transition-property: background, color;
   }
 }
 .navbar-inverse .navbar-brand {
@@ -115,12 +220,12 @@ h2 .glyphicon {
  */
 
 .jumbotron {
-  background-color: $gray-darker;
+  border-bottom: 15px solid $gray-dark;
   margin: 0;
   padding: 80px 0 0;
 
   .rocket-image {
-    margin-left: 0;
+    margin: -80px 0 0 0;
     text-align: center;
 
     img {
@@ -131,11 +236,45 @@ h2 .glyphicon {
 
   .countdown {
     // background: url(/images/countdown.png) no-repeat center left;
-    margin: 0 0 15px -170px;
+    margin: -20px 0 15px -170px;
     padding-left: 313px;
 
-    img { margin-left: -270px; }
+    img {
+      height: auto;
+      margin: 0 10px 0 -280px;
+      opacity: .5;
+      width: 261px;
+    }
   }
+
+  p {
+    font-size: $font-size-large;
+    margin-bottom: 20px;
+  }
+
+  .arrow-down-btn { display: inline-block; margin-top: 0; }
+}
+
+
+
+/**********************************************
+ * Forms
+ */
+
+.form-control {
+  border: 1px solid transparent;
+  box-shadow: 0 2px 0 darken($gray-lighter, 20%);
+
+  &:focus {
+    box-shadow: 0 2px 0 darken($gray-lighter, 20%), 0 1px 10px 2px #009CFF, 0 1px 2px 1px white;
+    outline: 1px;
+  }
+}
+
+form label.error {
+  color: $brand-danger;
+  font-size: .9em;
+  margin: 5px 0 0 10px;
 }
 
 
@@ -145,12 +284,11 @@ h2 .glyphicon {
  */
 
 /* Extra small devices (phones, less than 768px) */
-@media (min-width: $screen-xs-min) {
-}
+@media (min-width: $screen-xs-min) {}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
-  .row.vertical-center {
+  .vertical-center {
     display: table;
 
     &>div {
@@ -161,8 +299,10 @@ h2 .glyphicon {
   }
 
   .jumbotron {
+    padding-top: 150px;
+
     .rocket-image {
-      margin-left: -90px;
+      margin: 0 0 0 -90px;
       text-align: left;
 
       img {
@@ -172,22 +312,29 @@ h2 .glyphicon {
     }
 
     .countdown {
-      margin-top: 40px;
+      margin-top: -50px;
+
+      img { opacity: 1; }
     }
+  }
+
+  .panel .col-sm-4:not(:first-child){
+    margin-top: 0;
   }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
   .jumbotron {
-    .rocket-image {
-      margin-left: -130px;
-    }
+    padding-top: 100px;
 
-    .countdown {
-      margin-top: 80px;
-    }
+    .rocket-image { margin-left: -130px; }
+    .countdown { margin-top: -10px; }
+    p { font-size: $jumbotron-font-size; }
+    .arrow-down-btn { margin-top: 20px; }
   }
+
+  .panel-body { padding: 35px 45px; }
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -196,13 +343,9 @@ h2 .glyphicon {
     .rocket-image {
       margin-left: -70px;
 
-      img {
-        max-width: 105%;
-      }
+      img { max-width: 105%;}
     }
 
-    .countdown {
-      margin-top: 100px;
-    }
+    .countdown { margin-top: 25px; }
   }
 }

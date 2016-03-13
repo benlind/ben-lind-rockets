@@ -37,9 +37,8 @@
       <div class="navbar-collapse collapse" id="navbar-main">
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Work</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
       </div>
@@ -50,11 +49,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-1 col-sm-6">
-          <h1 class="script countdown"><img src="images/countdown.png" alt="" /><em>Blast off!</em></h1>
+          <h1 class="script countdown"><img src="images/countdown@2x.png" alt="" /><em>Blast off!</em></h1>
           <p>
-            I create <span class="text-danger">powerful</span>, <span class="text-warning">beautiful</span><br>
-            websites with a <em class="text-primary"><strong>kick.</strong></em>
+            My name is Ben Lind, and I create<br>
+            <span class="text-danger">powerful</span>, <span class="text-warning">clean</span> websites<br>
+            with a <em class="text-primary"><strong>kick.</strong></em>
           </p>
+          <p><a href="#skills" class="arrow-down-btn">Learn more</a></p>
         </div>
         <div class="col-lg-7 col-sm-6 rocket-image">
           <img class="img-responsive" src="images/rocket-illustration@2x.png" alt="" />
@@ -64,7 +65,7 @@
   </section>
 
   <div class="container">
-    <section>
+    <section id="skills">
       <h1 class="text-center section-title">My Skills</h1>
       <div class="row vertical-center">
         <div class="col-sm-5">
@@ -94,17 +95,20 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-sm-4">
-              <h2><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>E-Commerce</h2>
+              <span class="glyphicon icon-large icon-center text-muted glyphicon-shopping-cart" aria-hidden="true"></span>
+              <h2 class="text-center">E-Commerce</h2>
               <p>With the power of e-Commerce platforms like <a href="http://www.x-cart.com/">X-Cart</a>, <a href="http://www.shopify.com/">Shopify</a>, and <a href="https://www.woothemes.com/woocommerce/">WooCommerce</a>, you can easily sell and manage products on your website. Whether you want a full-fledged web store or just a simple Buy with PayPal button, there is a platform to suit your needs.</p>
             </div>
 
             <div class="col-sm-4">
-              <h2><span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>Responsive Design</h2>
+              <span class="glyphicon icon-large icon-center text-muted glyphicon-resize-full" aria-hidden="true"></span>
+              <h2 class="text-center">Responsive Design</h2>
               <p>I use responsive design techniques to ensure that your website to looks good on every device. Whether visitors view your site on their phone, tablet, or desktop computer, they will see a polished, bulletproof design that maintains the feel of your brand.</p>
             </div>
 
             <div class="col-sm-4">
-              <h2><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>Custom Fonts</span></h2>
+              <span class="glyphicon icon-large icon-center text-muted glyphicon-text-size" aria-hidden="true"></span>
+              <h2 class="text-center">Custom Fonts</h2>
               <p>The web used to be a place where you could only use a handful of fonts to style your text. However, with the advent of services like <a href="https://typekit.com/">Typekit</a> and <a href="http://www.google.com/fonts">Google Fonts</a>, you can now choose from hundreds of beautiful fonts to personalize your type.</p>
             </div>
           </div>
@@ -112,24 +116,75 @@
       </div> <!-- /panel -->
     </section>
 
-    <section>
+    <section id="contact">
       <h1 class="text-center section-title">Contact Me</h1>
+
+      <div class="row">
+        <div class="col-sm-5">
+          <p class="text-large text-light">If you are interested in hiring me to create or maintain your website, or if you have a question about my services, drop me a message in the form.</p>
+          <h3 class="text-center">Other ways to connect:</h3>
+          <div class="social text-center">
+            <a href="http://www.linkedin.com/in/bendlind/" class="linkedin"><img src="images/icon-linkedin.png" alt="LinkedIn" /> LinkedIn</a><a href="https://twitter.com/benlind" class="twitter"><img src="images/icon-twitter.png" alt="Twitter" /> Twitter</a>
+          </div>
+        </div>
+
+        <div class="col-sm-7">
+          <div class="alert alert-success collapse">
+            Your message was sent succssfully! I will be in touch as soon as I can.
+          </div>
+
+          <div class="alert alert-danger collapse">
+            Something went wrong. Try refreshing and submitting the form again.
+          </div>
+
+          <form class="form-horizontal" method="get">
+            <div class="form-group">
+              <label for="contactName" class="col-sm-3 col-md-2 control-label">Name</label>
+              <div class="col-sm-9 col-md-6">
+                <input type="text" class="form-control" name="name" id="contactName" placeholder="Name" value="Test User" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail" class="col-sm-3 col-md-2 control-label">Email</label>
+              <div class="col-sm-9 col-md-6">
+                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Email" value="test@emaildudewownicecool123.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="col-sm-3 col-md-2 control-label">Message</label>
+              <div class="col-sm-9">
+                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Message">Test message woo yeah this is so cool yeah oh yeah man sweet.</textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-3 col-md-offset-2">
+                <input type="submit" class="btn btn-primary" value="Send" name="send" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> <!-- /row -->
     </section>
-  </div>
+  </div> <!-- /container -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
-  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-  e.src='https://www.google-analytics.com/analytics.js';
-  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-  ga('create','UA-XXXXX-X');ga('send','pageview');
+  // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  // e.src='https://www.google-analytics.com/analytics.js';
+  // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  // ga('create','UA-7527655-1');ga('send','pageview');
   </script>
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/jquery-form/jquery.form.js"></script>
+  <script src="/bower_components/jquery-validation/dist/jquery.validate.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -150,6 +205,7 @@
 
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
+  <script src="scripts/validate.js"></script>
   <!-- endbuild -->
 </body>
 </html>

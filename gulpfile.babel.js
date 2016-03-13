@@ -110,7 +110,7 @@ function startPHPServer(baseDir, rootDirs) {
           // urls without extensions or with php extension should
           // be proxied to php. This prevents dots in urls, though.
           modrewrite([
-            '^([^.]*|.*?\.php)$ http://localhost:8000$1 [P,NC]'
+            '^((?:[^.]*|.*?\.php)(?:\\?[^\\s]*)?)$ http://localhost:8000$1 [P,NC]'
           ])
         ];
       }
