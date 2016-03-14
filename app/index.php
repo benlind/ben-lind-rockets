@@ -1,3 +1,5 @@
+<?php include('settings.php') ?>
+
 <!doctype html>
 <html lang="">
 <head>
@@ -6,8 +8,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ben Lind | Professional Web Design</title>
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="manifest.json">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#518aa6">
+  <meta name="apple-mobile-web-app-title" content="Ben Lind">
+  <meta name="application-name" content="Ben Lind">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="mstile-144x144.png">
+  <meta name="theme-color" content="#1d2326">
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
@@ -37,8 +58,14 @@
       <div class="navbar-collapse collapse" id="navbar-main">
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <?php
+
+          # Print the nav links stored in settings.php
+          foreach ($nav_links as $lname => $lhref) {
+            echo "<li><a href='$lhref'>$lname</a></li>\n";
+          }
+
+          ?>
         </ul>
 
       </div>
@@ -141,21 +168,21 @@
             <div class="form-group">
               <label for="contactName" class="col-sm-3 col-md-2 control-label">Name</label>
               <div class="col-sm-9 col-md-6">
-                <input type="text" class="form-control" name="name" id="contactName" placeholder="Name" value="Test User" />
+                <input type="text" class="form-control" name="name" id="contactName" placeholder="Name" />
               </div>
             </div>
 
             <div class="form-group">
               <label for="contactEmail" class="col-sm-3 col-md-2 control-label">Email</label>
               <div class="col-sm-9 col-md-6">
-                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Email" value="test@emaildudewownicecool123.com" />
+                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Email" />
               </div>
             </div>
 
             <div class="form-group">
               <label for="contactMessage" class="col-sm-3 col-md-2 control-label">Message</label>
               <div class="col-sm-9">
-                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Message">Test message woo yeah this is so cool yeah oh yeah man sweet.</textarea>
+                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Message"></textarea>
               </div>
             </div>
 

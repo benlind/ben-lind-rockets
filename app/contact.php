@@ -1,29 +1,35 @@
 <?php
 
-$method = 'database';  # 'database' or 'email'
+include('settings.php');
 
 header('Content-type: application/json');
 
-# If the form was submitted, scrub the input (server-side validation)
-# see below in the html for the client-side validation using jQuery
-
+# Expected inputs (these should map to $_GET indices)
 $data = [
   'name'    => '',
   'email'   => '',
   'message' => '',
 ];
 
-$errors = array();  # array to hold errors and success/error status
+$errors = array();
 
-# Collect all input and trim to remove leading and trailing whitespaces
+
+# Collect and sanitize inputs
 foreach ($data as $input => $val) {
   if (isset($_GET[$input])) {
-    $data[$input] = trim(filter_var(removeHeaders($_GET[$input], FILTER_SANITIZE_STRING)));
+    if ($contact_method === 'database') {
+      # Do not sanitize string, because we will use prepared statements
+      $data[$input] = trim($_GET[$input]);
+    }
+    else {
+      $data[$input] = trim(sanitize_str($_GET[$input], $contact_method));
+    }
   }
   else {
     $data[$input] = '';
   }
 }
+
 
 # Validate the inputs
 if (strlen($data['name']) == 0)
@@ -39,15 +45,15 @@ if (strlen($data['message']) == 0)
 else if(strlen($data['message']) < 25)
   $errors['message'] = "Your name must be at least 25 characters.";
 
-
-# If no errors were found, proceed with storing the user input
 if (!empty($errors)) {
   http_response_code(400);  # Bad Request: invalid information entered
   echo json_encode($errors);
   die();
 }
 
-if ($method === 'database') {
+
+# If no errors were found, store the user input
+if ($contact_method === 'database') {
   # Add the message to the database
 
   $db = new mysqli('localhost', 'root', 'root', 'cs1520');
@@ -73,37 +79,40 @@ if ($method === 'database') {
   $stmt->close();
   $db->close();
 }
-// else if ($method === 'email') {
-//   # Build the email (replace the address in the $to section with your own)
-//
-//   $subject = "BL Contact - " . $data['name'];
-//   $headers = "From: " . $data['email'];
-//   $data['message'] = $data['message'] . "\n\n"
-//              . "From: " . $data['name'] . " <" . $data['email'] . ">";
-//
-//   mail($to, $subject, $data['message'], $headers);
-// }
+else if ($contact_method === 'email') {
+  # Build the email (TODO: use an actual email address)
+
+  $to = '';
+  $subject = "BL Contact - " . $data['name'];
+  $headers = "From: " . $data['email'];
+  $data['message'] = $data['message'] . "\n\n"
+             . "From: " . $data['name'] . " <" . $data['email'] . ">";
+
+  mail($to, $subject, $data['message'], $headers);
+}
 
 http_response_code(200);
 echo "{}";  # jQuery validate needs some JSON back
 die();
 
-# Mail header removal
-function removeHeaders($string) {
-  $headers = array(
-    "/to\:/i",
-    "/from\:/i",
-    "/bcc\:/i",
-    "/cc\:/i",
-    "/Content\-Transfer\-Encoding\:/i",
-    "/Content\-Type\:/i",
-    "/Mime\-Version\:/i"
-  );
-  $string = preg_replace($headers, '', $string);
-  return strip_tags($string);
-}
 
-# If passed variable is not set, return empty string
-function isset_or_init($var) {
-  return isset($var) ? $var : '';
+
+
+
+/**********************************************
+ * Functions
+ */
+
+/**
+ * sanitize_str() sanitizes the passed string $str. Based on the $target
+ * (e.g., 'database' or 'email'), the string will be sanitized differently.
+ */
+function sanitize_str($str, $target) {
+  if ($target === 'database') {
+    return mysql_real_escape_string($str);
+  }
+  else if ($target === 'email') {
+    return filter_var($str, FILTER_SANITIZE_EMAIL);
+  }
+  return $str;
 }
