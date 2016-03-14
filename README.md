@@ -45,3 +45,8 @@ To set up the database, start a MySQL server on localhost. Create a database nam
 - Sass
 - jQuery
 - PHP
+
+# TODO
+- Serve non-retina images to non-retina devices (via [retina.js](http://imulus.github.io/retinajs/) or [retinaimag.es](http://retinaimag.es/)).
+- Change the local PHP server to allow using POST from the contact form instead of only GET.
+- Deploy the site to benlind.com.
