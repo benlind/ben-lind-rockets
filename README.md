@@ -1,33 +1,47 @@
 # Ben Lind's Personal Site
-This is the repository for the personal site of Ben Lind. It is currently in the alpha stage of development, but I plan on eventually using it to replace my current website at [benlind.com](benlind.com).
+This is the repository for the personal site of Ben Lind. I am a web developer, currently working at a freelance level but soon at a professional level as well. This website is primarily a place where I showcase my web development work.
 
-# Project Plan
-## Technology
-The back end of this website will be written in PHP. This PHP will be closely coupled with the HTML, CSS, and Javascript on the front end, but I hope to maintain a level of separation between the back and front ends of the site. I do not plan on using a full-fledged MVC layout because the scope of this site is small, and I do not have much database data to work with.
+# Grading
+To grade this project, you can either 1) build it from the source (see "Building" below) or 2) simply look at the files in `/dist`. That directory contains all of the *compiled* assets. If you choose option 2, you can skip to the "Running" section below.
 
-I plan on implementing a one-page layout. With the small scope of the project, I don't see a need for multiple pages, and using a single page will give me some interesting opportunities for adding javascript functionality.
+To see the raw, uncompressed files for grading, look in `/app`.
 
-**Question:** I wonder, without using a web MVC framework, how can I easily separate logic from content in my project?
+## Building
+To build this project from the source, run the following commands from the project root:
 
-## Purpose and Features
-I am a web developer, currently on a freelance level but soon on a professional level as well. This website will primarily be a place where I can showcase some of my web development work.
+```
+npm install
+bower install
+gulp build
+```
 
-Here are some of the specific features that I expect to be on the site:
+The `gulp build` command will compile all of the assets in `/app` and write the compiled files to `/dist`.
 
-- Basic information about myself
-- A list of websites that I have created, along with descriptions and screenshots
-- A contact form where people can request service
-- A resume/cv
+## Running
+To run the app, there are two options: use `gulp serve:dist` to start up a small PHP server, or use an app like XAMPP or MAMP.
 
-Other possible features:
+### Option 1: Gulp
+To use this option, you will likely have to edit `gulpfile.babel.js`. In that file, change the following lines to point to a PHP binary and php.ini file on your system:
 
-- Blog
-- Photography gallery
+```
+const PHPbin = '/Applications/MAMP/bin/php/php5.5.10/bin/php';
+const PHPini = '/Applications/MAMP/bin/php/php5.5.10/conf/php.ini';
+```
 
-In the end, I want to try to create something unique and creative that will reflect my skills as a web developer. I have seen plenty of bland single-page portfolios, and I don't want to fall into the same trap of forgettability.
+After pointing those lines to the appropriate files, you should be able to run `gulp serve:dist` to run the app. That command should launch a browser pointing to the main app page. If it does not, simply navigate to http://localhost:3000/index.php in a browser.
 
-## Front End Framework
-I am currently debating whether to use Bootstrap or Foundation as the site's front end framework. I have experience with Bootstrap, so it would be easy to get up and running with that. However, studying Computer Science in school means that I am always open to learning new technologies, so I will likely give Foundation a try for this project. Who knows? I might like it better than Bootstrap!
+### Option 2: XAMPP or MAMP
+Start up XAMPP or MAMP, and point their htdocs to the `/dist` folder of this project. Then start the Apache server.
 
-## Very Ambitious Goals
-Ultimately, I hope that this project ["doesn't do anything new"](https://xkcd.com/1497/) and I hope that eventually I can [reach shallow water](https://xkcd.com/349/) in time.
+## Database
+The database is only used for the contact form. Every message entered into this form is stored to the database.
+
+To set up the database, start a MySQL server on localhost. Create a database named cs1520 in it with a Messages table. The Messages table should contain these fields: `msg_id`, `name`, `email`, and `message`.
+
+# Technologies
+- Gulp
+- Bower
+- NPM
+- Sass
+- jQuery
+- PHP
