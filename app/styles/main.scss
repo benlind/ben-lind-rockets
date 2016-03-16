@@ -302,6 +302,8 @@ form label.error {
       float: none;
       vertical-align: middle;
     }
+
+    & .col-sm-7 .img-responsive { width: 100%; }
   }
 
   .jumbotron {
