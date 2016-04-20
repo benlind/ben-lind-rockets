@@ -155,32 +155,32 @@
         </div>
         <div class="col-md-4 col-xs-6 project-item">
           <a href="#">
-            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
-            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+            <img src="images/projects/the-pool-specialist-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>The Pool<br>Specialist</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
           <a href="#">
-            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
-            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+            <img src="images/projects/grieb-chiropractic-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Grieb<br>Chiropractic</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
           <a href="#">
-            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
-            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+            <img src="images/projects/parkview-church-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Parkview<br>Christian<br>Church</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
           <a href="#">
-            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
-            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+            <img src="images/projects/nhch-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>North Hills<br>Christian<br>Homeschoolers</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
           <a href="#">
-            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
-            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+            <img src="images/projects/prisca-edwards-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Prisca Edwards<br>Photography</span></span>
           </a>
         </div>
       </div>
