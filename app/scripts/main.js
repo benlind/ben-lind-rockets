@@ -29,4 +29,30 @@ $(function() {
     return false;
   });
 
+  // Bounce "Learn More" button
+  // doBounce($('.arrow-down-btn'), )
+  $('.arrow-down-btn').myBounce(10, 200, 5000);
+
 });
+
+
+
+/**
+ * $.myBounce() bounces the passed element by animating the top margin.
+ *
+ * Parameters:
+ *  - dist    distance to bounce
+ *  - speed   speed of animation
+ *  - delay   ms to delay between bounces
+ */
+$.fn.myBounce = function(dist, speed, delay){
+  var self = this;
+  (function runBounce(){
+    self.animate({ marginTop: '-=' + dist }, speed, 'easeOutSine')
+    .animate({ marginTop: '+=' + dist }, speed, 'easeInSine', function() {
+      $(this).delay(delay);
+      runBounce();
+    });
+  })();
+  return this;
+};
