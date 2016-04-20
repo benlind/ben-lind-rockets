@@ -149,6 +149,10 @@ section { padding-top: 70px; }
   margin-top: 30px;
 }
 
+.img-rounded {
+  border-radius: $border-radius-base;
+}
+
 
 ///// Icons /////
 
@@ -259,6 +263,57 @@ h2 .glyphicon { margin-right: 15px; }
   }
 
   .arrow-down-btn { display: inline-block; margin-top: 0; }
+}
+
+
+
+/**********************************************
+ * Projects
+ */
+
+.project-item {
+  margin: 0 0 25px;
+
+  a {
+    background: none;
+    box-shadow: none;
+    display: block;
+    padding: 0;
+    position: relative;
+  }
+
+  a:hover .image-caption {
+    border: 5px solid $brand-primary;
+    opacity: 1;
+  }
+
+  .image-caption {
+    background: rgba($body-bg, .85);
+    border-radius: $border-radius-base;
+    bottom: 0;
+    font: 0/0 a;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .3s ease;
+
+    span {
+      color: white;
+      display: inline-block;
+      font: italic 100 ceil(($font-size-base * 3)) $font-family-sans-serif;
+      text-align: center;
+      vertical-align: middle;
+      width: 100%;
+    }
+  }
+  .image-caption::before {
+    content: ' ';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
 }
 
 

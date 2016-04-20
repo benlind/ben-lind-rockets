@@ -141,6 +141,49 @@
           </div>
         </div> <!-- /panel-body -->
       </div> <!-- /panel -->
+    </section> <!-- /skills -->
+
+    <section id="work">
+      <h1 class="text-center section-title">My Projects</h1>
+
+      <div class="row">
+        <div class="col-md-4 col-xs-6 project-item">
+          <a href="#">
+            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+          </a>
+        </div>
+        <div class="col-md-4 col-xs-6 project-item">
+          <a href="#">
+            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+          </a>
+        </div>
+        <div class="col-md-4 col-xs-6 project-item">
+          <a href="#">
+            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+          </a>
+        </div>
+        <div class="col-md-4 col-xs-6 project-item">
+          <a href="#">
+            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+          </a>
+        </div>
+        <div class="col-md-4 col-xs-6 project-item">
+          <a href="#">
+            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+          </a>
+        </div>
+        <div class="col-md-4 col-xs-6 project-item">
+          <a href="#">
+            <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
+            <span class="image-caption"><span>Write from<br>the Heart</span></span>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
@@ -148,7 +191,7 @@
 
       <div class="row">
         <div class="col-sm-5">
-          <p class="text-large text-light">If you are interested in hiring me to create or maintain your website, or if you have a question about my services, drop me a message in the form.</p>
+          <p class="text-large text-light">Interested in hiring me to create or maintain your website? Have a question about my services? Drop me a message in the form.</p>
           <h3 class="text-center">Other ways to connect:</h3>
           <div class="social text-center">
             <a href="http://www.linkedin.com/in/bendlind/" class="linkedin"><img src="images/icon-linkedin.png" alt="LinkedIn" /> LinkedIn</a><a href="https://twitter.com/benlind" class="twitter"><img src="images/icon-twitter.png" alt="Twitter" /> Twitter</a>
@@ -194,7 +237,7 @@
           </form>
         </div>
       </div> <!-- /row -->
-    </section>
+    </section> <!-- /contact -->
   </div> <!-- /container -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
