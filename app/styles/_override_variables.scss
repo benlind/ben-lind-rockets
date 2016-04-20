@@ -590,24 +590,24 @@ $label-link-hover-color:      #fff !default;
 //##
 
 //** Padding applied to the modal body
-$modal-inner-padding:         20px !default;
+$modal-inner-padding:         15px !default;
 
 //** Padding applied to the modal title
-$modal-title-padding:         15px !default;
+$modal-title-padding:         5px 15px !default;
 //** Modal title line-height
 $modal-title-line-height:     $line-height-base !default;
 
 //** Background color of modal content area
-$modal-content-bg:                             $gray-light !default;
+$modal-content-bg:                             $gray-base !default;
 //** Modal content border color
-$modal-content-border-color:                   transparent !default;
+$modal-content-border-color:                   $gray-dark !default;
 //** Modal content border color **for IE8**
-$modal-content-fallback-border-color:          transparent !default;
+$modal-content-fallback-border-color:          $gray-dark !default;
 
 //** Modal backdrop background color
 $modal-backdrop-bg:           #000 !default;
 //** Modal backdrop opacity
-$modal-backdrop-opacity:      .5 !default;
+$modal-backdrop-opacity:      .7 !default;
 //** Modal header border color
 $modal-header-border-color:   $body-bg !default;
 //** Modal footer border color

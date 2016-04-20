@@ -2,7 +2,7 @@ $(function() {
 
   // Smooth scroll links
   var $root = $('html, body');
-  $('a').click(function() {
+  $('a[href*="#"]').click(function() {
     var href = $.attr(this, 'href');
 
     // Decide where to scroll to
@@ -29,9 +29,22 @@ $(function() {
     return false;
   });
 
+
   // Bounce "Learn More" button
   // doBounce($('.arrow-down-btn'), )
   $('.arrow-down-btn').myBounce(10, 200, 5000);
+
+
+  // Lightbox
+  // $('a[data-toggle="lightbox"]', 'click', function(event) {
+  //   event.preventDefault();
+  //   $(this).ekkoLightbox();
+  // });
+
+  $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    return $(this).ekkoLightbox();
+  });
 
 });
 

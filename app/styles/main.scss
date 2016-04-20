@@ -282,11 +282,17 @@ h2 .glyphicon { margin-right: 15px; }
     display: block;
     padding: 0;
     position: relative;
+    margin: 10px;
   }
 
   a:hover .image-caption {
-    border: 5px solid $brand-primary;
+    border: 5px solid $gray;
+    // border: 1px solid $brand-primary;
     opacity: 1;
+
+    span {
+      margin-top: 0;
+    }
   }
 
   .image-caption {
@@ -304,8 +310,10 @@ h2 .glyphicon { margin-right: 15px; }
     span {
       color: white;
       display: inline-block;
-      font: italic 100 ceil(($font-size-base * 3)) $font-family-sans-serif;
+      font: italic 100 ceil(($font-size-base * 2.5)) $font-family-sans-serif;
+      margin-top: -30px;
       text-align: center;
+      transition: all .3s ease;
       vertical-align: middle;
       width: 100%;
     }
@@ -338,6 +346,30 @@ form label.error {
   color: $brand-danger;
   font-size: .9em;
   margin: 5px 0 0 10px;
+}
+
+
+
+/**********************************************
+ * Modals
+ */
+
+.modal-dialog {
+  max-width: 90% !important;
+  width: 1000px !important;
+
+  .modal-content {
+    margin-bottom: 30px;
+  }
+  .modal-header .close {
+    margin: 2px -5px 0 0;
+    padding: 0 5px;
+  }
+  .modal-title {
+    color: $gray-light;
+    font-style: italic;
+    text-align: center;
+  }
 }
 
 

@@ -32,6 +32,7 @@
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/ekko-lightbox/dist/ekko-lightbox.css" media="screen" charset="utf-8">
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -148,7 +149,7 @@
 
       <div class="row">
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="#">
+          <a href="images/projects/write-from-the-heart-square-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="Write from the Heart">
             <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>Write from<br>the Heart</span></span>
           </a>
@@ -256,6 +257,7 @@
   <script src="/bower_components/jquery-form/jquery.form.js"></script>
   <script src="/bower_components/jquery-validation/dist/jquery.validate.js"></script>
   <script src="/bower_components/jquery-easing/jquery.easing.js"></script>
+  <script src="/bower_components/ekko-lightbox/dist/ekko-lightbox.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
