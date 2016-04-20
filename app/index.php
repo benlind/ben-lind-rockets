@@ -255,6 +255,7 @@
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/jquery-form/jquery.form.js"></script>
   <script src="/bower_components/jquery-validation/dist/jquery.validate.js"></script>
+  <script src="/bower_components/jquery-easing/jquery.easing.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
