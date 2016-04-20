@@ -219,6 +219,10 @@ h2 .glyphicon { margin-right: 15px; }
     transition: all .2s ease;
     transition-property: background, color;
   }
+
+  li.active a {
+    box-shadow: inset 0px -1px 0px #40C834;
+  }
 }
 .navbar-inverse .navbar-brand {
   color: $text-color;
@@ -369,6 +373,15 @@ form label.error {
     color: $gray-light;
     font-style: italic;
     text-align: center;
+  }
+  .ekko-lightbox-nav-overlay a {
+    background: none;
+    color: white;
+    text-shadow: 0 1px 2px black;
+
+    &:hover {
+      color: white;
+    }
   }
 }
 

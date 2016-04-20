@@ -398,10 +398,10 @@ $navbar-inverse-border:                     transparent !default;
 
 // Inverted navbar links
 $navbar-inverse-link-color:                 $gray-light !default;
-$navbar-inverse-link-hover-color:           $text-color !default;
+$navbar-inverse-link-hover-color:           $gray-lighter !default;
 $navbar-inverse-link-hover-bg:              lighten($navbar-inverse-bg, 5%) !default;
-$navbar-inverse-link-active-color:          $navbar-inverse-link-color !default;
-$navbar-inverse-link-active-bg:             lighten($navbar-inverse-bg, 5%) !default;
+$navbar-inverse-link-active-color:          $gray-lighter !default;
+$navbar-inverse-link-active-bg:             lighten($navbar-inverse-bg, 10%) !default;
 $navbar-inverse-link-disabled-color:        #444 !default;
 $navbar-inverse-link-disabled-bg:           transparent !default;
 

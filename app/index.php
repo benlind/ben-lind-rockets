@@ -57,7 +57,6 @@
         </button>
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
-
         <ul class="nav navbar-nav navbar-right">
           <?php
 
@@ -68,7 +67,6 @@
 
           ?>
         </ul>
-
       </div>
     </div>
   </div>
@@ -155,7 +153,7 @@
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="#">
+          <a href="images/projects/the-pool-specialist-square-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="The Pool Specialist">
             <img src="images/projects/the-pool-specialist-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>The Pool<br>Specialist</span></span>
           </a>
