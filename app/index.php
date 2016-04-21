@@ -147,37 +147,37 @@
 
       <div class="row">
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="images/projects/write-from-the-heart-square-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="Write from the Heart">
+          <a href="images/projects/write-from-the-heart-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="Write from the Heart" data-type="image">
             <img src="images/projects/write-from-the-heart-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>Write from<br>the Heart</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="images/projects/the-pool-specialist-square-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="The Pool Specialist">
+          <a href="images/projects/the-pool-specialist-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="The Pool Specialist" data-type="image">
             <img src="images/projects/the-pool-specialist-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>The Pool<br>Specialist</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="#">
+          <a href="images/projects/grieb-chiropractic-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="Grieb Chiropractic" data-type="image">
             <img src="images/projects/grieb-chiropractic-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>Grieb<br>Chiropractic</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="#">
+          <a href="images/projects/parkview-church-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="Parkview Christian Church" data-type="image">
             <img src="images/projects/parkview-church-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>Parkview<br>Christian<br>Church</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="#">
+          <a href="images/projects/nhch-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="North Hills Christian Homeschoolers" data-type="image">
             <img src="images/projects/nhch-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>North Hills<br>Christian<br>Homeschoolers</span></span>
           </a>
         </div>
         <div class="col-md-4 col-xs-6 project-item">
-          <a href="#">
+          <a href="images/projects/prisca-edwards-full.jpg" data-toggle="lightbox" data-gallery="projects" data-title="Prisca Edwards Photography" data-type="image">
             <img src="images/projects/prisca-edwards-square.jpg" class="img-responsive img-rounded" />
             <span class="image-caption"><span>Prisca Edwards<br>Photography</span></span>
           </a>

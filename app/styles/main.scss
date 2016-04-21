@@ -363,7 +363,10 @@ form label.error {
   width: 1000px !important;
 
   .modal-content {
+    color: $gray;
+    font-style: italic;
     margin-bottom: 30px;
+    text-align: center;
   }
   .modal-header .close {
     margin: 2px -5px 0 0;
@@ -382,6 +385,10 @@ form label.error {
     &:hover {
       color: white;
     }
+  }
+  .modal-footer {
+    font-style: italic;
+    text-align: center;
   }
 }
 

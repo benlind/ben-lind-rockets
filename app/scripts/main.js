@@ -54,7 +54,6 @@ $(function() {
     // Highlight the nav link for the current section
     $pageSections.each(function() {
       if($(window).scrollTop() + 25 >= $(this).offset().top) {
-        // console.log($(window).scrollTop() + ' >= ' + $(this).offset().top);
         var id = $(this).attr('id');
         $navLIs.removeClass('active');
         $navLIs.find('a[href="#'+ id +'"]').parent().addClass('active');
