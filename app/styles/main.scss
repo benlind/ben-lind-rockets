@@ -121,12 +121,6 @@ section { padding-top: 70px; }
   }
 }
 
-.section-title {
-  border-bottom: 5px solid $gray-dark;
-  margin-top: 0;
-  padding-bottom: 25px;
-}
-
 .btn-primary {
   @extend .link-3d;
 
@@ -223,10 +217,21 @@ h2 .glyphicon { margin-right: 15px; }
   li.active a {
     box-shadow: inset 0px -1px 0px #40C834;
   }
-}
-.navbar-inverse .navbar-brand {
-  color: $text-color;
-  font-size: ceil(($font-size-base * 1.75));
+
+  .navbar-brand {
+    color: $text-color;
+    font-size: ceil(($font-size-base * 1.75));
+
+    .navbar-tagline {
+      color: $gray;
+      font-size: .6em;
+      transition: margin .2s ease-out;
+      vertical-align: top;
+    }
+    &:hover .navbar-tagline {
+      margin-left: 10px;
+    }
+  }
 }
 
 
@@ -239,16 +244,6 @@ h2 .glyphicon { margin-right: 15px; }
   border-bottom: 15px solid $gray-dark;
   margin: 0;
   padding: 80px 0 0;
-
-  .rocket-image {
-    margin: -80px 0 0 0;
-    text-align: center;
-
-    img {
-      display: inline;
-      max-width: 95%;
-    }
-  }
 
   .countdown {
     // background: url(/images/countdown.png) no-repeat center left;
@@ -265,10 +260,168 @@ h2 .glyphicon { margin-right: 15px; }
 
   p {
     font-size: $font-size-large;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.arrow-down-btn {
+  display: inline-block;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.rocket-image {
+  margin: -80px 0 0 0;
+  text-align: center;
+
+  img {
+    display: inline;
+    max-width: 95%;
   }
 
-  .arrow-down-btn { display: inline-block; margin-top: 0; }
+  svg {
+    display: none;
+    margin: 0 auto;
+    max-width: 95%;
+
+    .star {
+      animation: fadePulse 1s linear alternate infinite;
+
+      &:nth-child(2) {
+        animation-delay: .3s;
+      }
+      &:nth-child(3) {
+        animation-delay: .4s;
+      }
+      &:nth-child(4) {
+        animation-delay: .6s;
+      }
+      &:nth-child(5) {
+        animation-delay: .7s;
+      }
+      &:nth-child(6) {
+        animation-delay: .9s;
+      }
+      &:nth-child(7) {
+        animation-delay: 1s;
+      }
+    }
+
+    .rocket-trail {
+      animation: flicker 3s linear alternate infinite;
+    }
+
+    .billow-circle {
+      animation: grow 2s linear alternate infinite;
+
+      &:nth-child(4) {  /* largest billow in center */
+      }
+      &:nth-child(5) {  /* left-most billow */
+        animation: none;
+      }
+      &:nth-child(6) {  /* right-most billow */
+        animation-duration: 2.2s;
+      }
+    }
+  }
+}
+
+/* Show static image instead of SVG for older browsers */
+html.svg .rocket-image img {
+  display: none;
+}
+html.svg .rocket-image svg {
+  display: block;
+}
+
+@keyframes fadePulse {
+  0%   { opacity: 1; }
+  100% { opacity: .25; }
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  5%   { opacity: .7; }
+  10%  { opacity: .9; }
+  15%  { opacity: .6; }
+  20%  { opacity: .5; }
+  25%  { opacity: .7; }
+  30%  { opacity: .6; }
+  35%  { opacity: 1; }
+  40%  { opacity: .3; }
+  45%  { opacity: .4; }
+  50%  { opacity: .8; }
+  55%  { opacity: .6; }
+  60%  { opacity: .9; }
+  65%  { opacity: .8; }
+  70%  { opacity: 1; }
+  75%  { opacity: .5; }
+  80%  { opacity: .9; }
+  85%  { opacity: .7; }
+  90%  { opacity: 1; }
+  95%  { opacity: .6; }
+  100% { opacity: 1; }
+}
+
+@keyframes grow {
+  0% {
+    transform-origin: bottom;
+    transform: scale(1.05);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scale(1);
+  }
+}
+
+// NOTE: Shrink is currently unused because FireFox does not support
+// transform-origin and causes the billows' edges to show
+@keyframes shrink {
+  0% {
+    transform-origin: bottom;
+    transform: scale(0.95);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scale(1);
+  }
+}
+
+
+
+/**********************************************
+ * Heading flares/rockets
+ */
+
+.section-title {
+  // border-bottom: 5px solid $gray-dark;
+  margin: 0 0 15px;
+  // padding-bottom: 25px;
+
+  img {
+    display: inline-block;
+    height: auto;
+    opacity: 0;
+    vertical-align: middle;
+    width: 147px;
+  }
+  .heading-flare-left {
+    margin-right: 25px;
+  }
+  .heading-flare-right {
+    margin-left: 25px;
+  }
+}
+
+.rocket-divider {
+  margin: 0 0 25px;
+  overflow: hidden;
+
+  img {
+    height: auto;
+    margin-left: -95.7%;
+    width: 200%;
+  }
 }
 
 
@@ -399,10 +552,14 @@ form label.error {
  */
 
 /* Extra small devices (phones, less than 768px) */
-@media (min-width: $screen-xs-min) {}
+@media (min-width: 0) {}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
+  .navbar .navbar-brand .navbar-tagline {
+    font-size: .7em;
+  }
+
   .vertical-center {
     display: table;
 
@@ -418,21 +575,24 @@ form label.error {
   .jumbotron {
     padding-top: 150px;
 
-    .rocket-image {
-      margin: 0 0 0 -90px;
-      text-align: left;
-
-      img {
-        display: block;
-        max-width: 130%;
-      }
-    }
-
     .countdown {
       margin-top: -50px;
 
       img { opacity: 1; }
     }
+  }
+
+  .rocket-image {
+    margin: 0 0 0 -90px;
+    text-align: left;
+    img, svg {
+      max-width: 130%;
+    }
+  }
+
+  html.no-svg .rocket-image img,
+  html.svg .rocket-image svg {
+    display: block;
   }
 
   .panel .col-sm-4:not(:first-child){
@@ -460,7 +620,7 @@ form label.error {
     .rocket-image {
       margin-left: -70px;
 
-      img { max-width: 105%;}
+      img, svg { max-width: 105%;}
     }
 
     .countdown { margin-top: 25px; }
