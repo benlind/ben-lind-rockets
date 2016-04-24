@@ -18,7 +18,7 @@ gulp build
 The `gulp build` command will compile all of the assets in `/app` and write the compiled files to `/dist`.
 
 ## Running
-To run the app, there are two options: use `gulp serve:dist` to start up a small PHP server, or use an app like XAMPP or MAMP.
+To run the app, there are two options: use `gulp serve` to start up a small PHP server, or use an app like XAMPP or MAMP.
 
 ### Option 1: Gulp
 To use this option, you will likely have to edit `gulpfile.babel.js`. In that file, change the following lines to point to a PHP binary and php.ini file on your system:
@@ -28,7 +28,7 @@ const PHPbin = '/Applications/MAMP/bin/php/php5.5.10/bin/php';
 const PHPini = '/Applications/MAMP/bin/php/php5.5.10/conf/php.ini';
 ```
 
-After pointing those lines to the appropriate files, you should be able to run `gulp serve:dist` to run the app. That command should launch a browser pointing to the main app page. If it does not, simply navigate to http://localhost:3000/index.php in a browser.
+After pointing those lines to the appropriate files, you should be able to run `gulp serve` to run the app. That command should launch a browser pointing to the main app page. If it does not, simply navigate to http://localhost:3000/index.php in a browser.
 
 ### Option 2: XAMPP or MAMP
 Start up XAMPP or MAMP, and point their htdocs to the `/dist` folder of this project. Then start the Apache server.
