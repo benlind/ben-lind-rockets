@@ -9,8 +9,10 @@ $icon-font-path: '../fonts/';
 // endbower
 
 
-$link-hover-bg: darken($brand-primary, 10%);
+
+$link-hover-bg:     darken($brand-primary, 10%);
 $link-border-color: darken($brand-primary, 20%);
+
 
 
 /**********************************************
@@ -20,8 +22,16 @@ $link-border-color: darken($brand-primary, 20%);
 ///// Elements /////
 
 body {
+  background: $body-bg url(/images/stars-pattern.png) repeat-x bottom;
+  background-size: 939px auto;
   font-weight: 100;
-  padding: $navbar-height 0 50px;
+  padding: $navbar-height 0 200px;
+}
+
+html.no-backgroundsize body {
+  // Hide bottom star pattern if background-size not supported (IE8)
+  background-image: none;
+  padding-bottom: 50px;
 }
 
 h1 { margin-bottom: 30px; }
@@ -170,7 +180,7 @@ section { padding-top: 70px; }
 
 h2 .glyphicon { margin-right: 15px; }
 
-.icon-large { font-size: 80px; }
+.icon-large { font-size: 50px; }
 .icon-center { display: block; text-align: center; }
 
 
@@ -314,19 +324,19 @@ h2 .glyphicon { margin-right: 15px; }
     .billow-circle {
       animation: grow 2s linear alternate infinite;
 
-      &:nth-child(4) {  /* largest billow in center */
+      &:nth-child(4) {  // largest billow in center
       }
-      &:nth-child(5) {  /* left-most billow */
+      &:nth-child(5) {  // left-most billow
         animation: none;
       }
-      &:nth-child(6) {  /* right-most billow */
+      &:nth-child(6) {  // right-most billow
         animation-duration: 2.2s;
       }
     }
   }
 }
 
-/* Show static image instead of SVG for older browsers */
+// Show static image instead of SVG for older browsers
 html.svg .rocket-image img {
   display: none;
 }
@@ -439,7 +449,7 @@ html.svg .rocket-image svg {
     display: block;
     padding: 0;
     position: relative;
-    margin: 10px;
+    margin: 0;
   }
 
   a:hover .image-caption {
@@ -467,7 +477,7 @@ html.svg .rocket-image svg {
     span {
       color: white;
       display: inline-block;
-      font: italic 100 ceil(($font-size-base * 2.5)) $font-family-sans-serif;
+      font: italic 100 25px $font-family-sans-serif;
       margin-top: -30px;
       text-align: center;
       transition: all .3s ease;
@@ -551,10 +561,10 @@ form label.error {
  * Media Queries
  */
 
-/* Extra small devices (phones, less than 768px) */
+// Extra small devices (phones, less than 768px)
 @media (min-width: 0) {}
 
-/* Small devices (tablets, 768px and up) */
+// Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm-min) {
   .navbar .navbar-brand .navbar-tagline {
     font-size: .7em;
@@ -598,9 +608,19 @@ form label.error {
   .panel .col-sm-4:not(:first-child){
     margin-top: 0;
   }
+
+  .project-item {
+    a {
+      margin: 10px;
+    }
+
+    .image-caption span {
+      font-size: ceil(($font-size-base * 2.5));
+    }
+  }
 }
 
-/* Medium devices (desktops, 992px and up) */
+// Medium devices (desktops, 992px and up)
 @media (min-width: $screen-md-min) {
   .jumbotron {
     padding-top: 100px;
@@ -614,7 +634,7 @@ form label.error {
   .panel-body { padding: 35px 45px; }
 }
 
-/* Large devices (large desktops, 1200px and up) */
+// Large devices (large desktops, 1200px and up)
 @media (min-width: $screen-lg-min) {
   .jumbotron {
     .rocket-image {

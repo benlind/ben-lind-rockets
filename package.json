@@ -41,7 +41,8 @@
       "quotes": [
         2,
         "single"
-      ]
+      ],
+      "key-spacing": 0
     }
   }
 }

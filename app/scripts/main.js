@@ -1,3 +1,5 @@
+'use strict';
+
 $(function() {
 
   // Smooth scroll links
@@ -7,7 +9,6 @@ $(function() {
 
     // Decide where to scroll to
     var top = 0;
-    var windowHeight = $(window).height();
     if (href === '#' || typeof $(href).offset() === 'undefined') {
       // Scroll to top
       top = 0;
@@ -31,7 +32,11 @@ $(function() {
 
 
   // Bounce "Learn More" button
-  $('.arrow-down-btn').myBounce(7, 200, 5000);
+  $('.arrow-down-btn').myBounce({
+    dist:  7,
+    speed: 200,
+    delay: 5000
+  });
 
 
   // Lightbox
@@ -46,8 +51,6 @@ $(function() {
   var $navLIs = $('.navbar .navbar-nav li');
 
   var $rocketDividers = $('.section-title');
-  var rocketDividerInitPos = $('.rocket-divider img').first().css('margin-left');
-  var rocketDividerEndPos = '0%';
 
   $(window).on('scroll', function() {
     // Remove highlight when above first div
@@ -61,7 +64,7 @@ $(function() {
         var id = $(this).attr('id');
 
         $navLIs.removeClass('active');
-        $navLIs.find('a[href="#'+ id +'"]').parent().addClass('active');
+        $navLIs.find('a[href="#' + id + '"]').parent().addClass('active');
       }
     });
 
@@ -74,17 +77,10 @@ $(function() {
             !$rocket.hasClass('animating')) {
           // ...has not already been animated, so animate
           $rocket.addClass('animating');
-          $rocket.find('img').animate({ 'margin-left': rocketDividerEndPos },
+          $rocket.find('img').animate({ 'margin-left': '0%' },
               1000, function () {
             $rocket.removeClass('animating').addClass('animation-finished');
           });
-
-          // // OLD CODE for flares
-          // $sectionTitle.addClass('animating');
-          // $sectionTitle.find('.heading-flare-left').myFlickerInOut();
-          // $sectionTitle.find('.heading-flare-right').myFlickerInOut(function() {
-          //   $sectionTitle.removeClass('animating').addClass('animation-finished');
-          // });
         }
       }
       else {
@@ -98,9 +94,9 @@ $(function() {
     });
 
     // If at bottom, highlight last link
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+    if($(window).scrollTop() + $(window).height() === $(document).height()) {
       $navLIs.removeClass('active');
-      $navLIs.find('a[href="#'+ $pageSections.last().attr('id') +'"]')
+      $navLIs.find('a[href="#' + $pageSections.last().attr('id') + '"]')
         .parent().addClass('active');
     }
   });
@@ -119,15 +115,30 @@ $(function() {
  *  - speed   speed of animation
  *  - delay   ms to delay between bounces
  */
-$.fn.myBounce = function(dist, speed, delay) {
+$.fn.myBounce = function({ dist = 10, speed = 200, delay = 1000 } = {}) {
   var self = this;
+
+  // bounceDownSpeed is the speed at which the element will bounce back to its
+  // original position. It should be slower than the ease up, since the jQuery
+  // easing library's bounce animation is too fast otherwise.
+  var bounceDownSpeed = speed * 1.875;
+
   (function runBounce(){
-    self.animate({ marginTop: '-=' + dist, marginBottom: '+=' + dist }, speed, 'easeOutSine')
-    .animate({ marginTop: '+=' + dist, marginBottom: '-=' + dist }, speed + 150, 'easeOutBounce', function() {
+    // Animate up and then down via margins
+    self.animate({
+      marginTop: '-=' + dist,
+      marginBottom: '+=' + dist
+    }, speed, 'easeOutSine');
+    self.animate({
+      marginTop: '+=' + dist,
+      marginBottom: '-=' + dist
+    }, bounceDownSpeed, 'easeOutBounce', function() {
+      // Infinitely repeat the animation
       $(this).delay(delay);
       runBounce();
     });
   })();
+
   return this;
 };
 
@@ -166,9 +177,11 @@ $.fn.myFlickerInOut = function(callback) {
 
   // Callback when animations are complete
   $(this).promise().done(function() {
-    typeof callback === 'function' && callback();
+    if (typeof callback === 'function') { callback(); }
   });
-}
+
+  return this;
+};
 
 
 /**
@@ -198,4 +211,4 @@ $.fn.isInView = function(offsetTop) {
     return true;
   }
   return false;
-}
+};

@@ -2,6 +2,7 @@
 
 $nav_links = [
   'Skills'  => '#skills',
+  'Work' => '#work',
   'Contact' => '#contact'
 ];
 

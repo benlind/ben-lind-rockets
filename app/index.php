@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ben Lind | Professional Web Design</title>
 
+  <meta name="description" content="I create quality websites for individuals and businesses. Have a beautiful, simple website that just works." />
+  <meta name="keywords" content="web development, web developer, website design, ben lind, ben, lind, portfolio, web, graphic, designer, graphic design, logo design, logos, skills, HTML, CSS, Javascript, Photoshop, Adobe Photoshop, PHP, Wordpress, Illustrator, freelance, entrepreneur" />
+  <meta name="author" content="Ben Lind" />
+  <meta name="google-site-verification" content="nVJ4NbEXPhwp7B8ogHjELETrYsE_tDfiQdxZDpN2_Fg" />
+
   <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
@@ -30,14 +35,16 @@
   <meta name="msapplication-TileImage" content="mstile-144x144.png">
   <meta name="theme-color" content="#1d2326">
 
-  <!-- build:css styles/vendor.css -->
+  <!-- build:css styles/all.css -->
+
+  <!-- VENDOR -->
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/ekko-lightbox/dist/ekko-lightbox.css" media="screen" charset="utf-8">
   <!-- endbower -->
-  <!-- endbuild -->
 
-  <!-- build:css styles/main.css -->
+  <!-- MAIN -->
   <link rel="stylesheet" href="/.tmp/styles/main.css">
+  
   <!-- endbuild -->
 
 </head>
@@ -264,7 +271,7 @@
           <img class="img-responsive" src="images/skills/cms.png" alt="Drupal" />
         </div>
         <div class="col-sm-5">
-          <h2 class="relative"><img class="icon-bg-right" src="images/icon-bg-drupal.png" alt="" />Easily Update Content</h2>
+          <h2 class="relative"><img class="icon-bg-right" src="images/icon-bg-drupal.png" alt="" />Easily Update Your Content</h2>
           <p><img class="img-responsive visible-xs-block" src="images/skills/cms.png" alt="Drupal" /></p>
           <p>The easiest way to keep your website's content up to date is to use a Content Management System (CMS). A CMS lets you control the content of your site's pages by logging into an admin panel.</p>
           <p>I have experience working with many popular Content Management Systems, including <a href="http://wordpress.org/">Wordpress</a>, <a href="https://drupal.org/">Drupal</a>, and <a href="http://www.silverstripe.org/">SilverStripe</a>, and I will recommend a CMS to fit your website's specific needs.</p>
@@ -297,8 +304,6 @@
     </section> <!-- /skills -->
 
     <section id="work">
-      <!-- <h1 class="text-center section-title"><img src="images/heading-flare-left.png" class="heading-flare-left" />My Projects<img src="images/heading-flare-right.png" class="heading-flare-right" /></h1> -->
-
       <h1 class="text-center section-title">My Projects</h1>
 
       <div class="rocket-divider"><img src="images/rocket-divider.png" /></div>
@@ -399,17 +404,18 @@
     </section> <!-- /contact -->
   </div> <!-- /container -->
 
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
-  // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-  // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-  // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-  // e.src='https://www.google-analytics.com/analytics.js';
-  // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-  // ga('create','UA-7527655-1');ga('send','pageview');
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-7527655-1');ga('send','pageview');
   </script>
 
-  <!-- build:js scripts/vendor.js -->
+  <!-- build:js scripts/all.js -->
+
+  <!-- VENDOR -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/jquery-form/jquery.form.js"></script>
@@ -418,9 +424,8 @@
   <script src="/bower_components/ekko-lightbox/dist/ekko-lightbox.js"></script>
   <script src="/bower_components/modernizr/modernizr.js"></script>
   <!-- endbower -->
-  <!-- endbuild -->
 
-  <!-- build:js scripts/plugins.js -->
+  <!-- PLUGINS -->
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
@@ -433,11 +438,11 @@
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-  <!-- endbuild -->
 
-  <!-- build:js scripts/main.js -->
+  <!-- MAIN -->
   <script src="scripts/main.js"></script>
   <script src="scripts/validate.js"></script>
+
   <!-- endbuild -->
 </body>
 </html>
