@@ -1,11 +1,6 @@
 # Ben Lind's Personal Site
 This is the repository for the personal site of Ben Lind. I am a web developer, currently working at a freelance level but soon at a professional level as well. This website is primarily a place where I showcase my web development work.
 
-# Grading
-To grade this project, you can either 1) build it from the source (see "Building" below) or 2) simply look at the files in `/dist`. That directory contains all of the *compiled* assets. If you choose option 2, you can skip to the "Running" section below.
-
-To see the raw, uncompressed files for grading, look in `/app`.
-
 ## Building
 To build this project from the source, run the following commands from the project root:
 
