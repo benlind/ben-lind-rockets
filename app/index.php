@@ -264,7 +264,7 @@
           <img class="img-responsive" src="images/skills/cms.png" alt="Drupal" />
         </div>
         <div class="col-sm-5">
-          <h2 class="relative"><img class="icon-bg-right" src="images/icon-bg-drupal.png" alt="" />Easily Update Your Content</h2>
+          <h2 class="relative"><img class="icon-bg-right" src="images/icon-bg-drupal.png" alt="" />Content Management Systems</h2>
           <p><img class="img-responsive visible-xs-block" src="images/skills/cms.png" alt="Drupal" /></p>
           <p>The easiest way to keep your website's content up to date is to use a Content Management System (CMS). A CMS lets you control the content of your site's pages by logging into an admin panel.</p>
           <p>I have experience working with many popular Content Management Systems, including <a href="http://wordpress.org/">Wordpress</a>, <a href="https://drupal.org/">Drupal</a>, and <a href="http://www.silverstripe.org/">SilverStripe</a>, and I will recommend a CMS to fit your website's specific needs.</p>
