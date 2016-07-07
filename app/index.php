@@ -1,5 +1,3 @@
-<?php include('settings.php') ?>
-
 <!doctype html>
 <html lang="" class="no-js">
 <head>
@@ -44,7 +42,7 @@
 
   <!-- MAIN -->
   <link rel="stylesheet" href="/.tmp/styles/main.css">
-  
+
   <!-- endbuild -->
 
 </head>
@@ -65,14 +63,9 @@
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-right">
-          <?php
-
-          # Print the nav links stored in settings.php
-          foreach ($nav_links as $lname => $lhref) {
-            echo "<li><a href='$lhref'>$lname</a></li>\n";
-          }
-
-          ?>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -375,21 +368,21 @@
             <div class="form-group">
               <label for="contactName" class="col-sm-3 col-md-2 control-label">Name</label>
               <div class="col-sm-9 col-md-6">
-                <input type="text" class="form-control" name="name" id="contactName" placeholder="Name" />
+                <input type="text" class="form-control" name="name" id="contactName" placeholder="Name" value="JD" />
               </div>
             </div>
 
             <div class="form-group">
               <label for="contactEmail" class="col-sm-3 col-md-2 control-label">Email</label>
               <div class="col-sm-9 col-md-6">
-                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Email" />
+                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Email" value="mail@tutwow.com" />
               </div>
             </div>
 
             <div class="form-group">
               <label for="contactMessage" class="col-sm-3 col-md-2 control-label">Message</label>
               <div class="col-sm-9">
-                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Message">asdflkjhasdklf asdlkfh askdljfh lkashf lkasdhf kljasdhf lkasdjh </textarea>
               </div>
             </div>
 
