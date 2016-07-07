@@ -357,7 +357,7 @@
 
         <div class="col-sm-7">
           <div class="alert alert-success collapse">
-            Your message was sent succssfully! I will be in touch as soon as I can.
+            Your message was sent successfully! I will be in touch as soon as I can.
           </div>
 
           <div class="alert alert-danger collapse">
@@ -368,21 +368,21 @@
             <div class="form-group">
               <label for="contactName" class="col-sm-3 col-md-2 control-label">Name</label>
               <div class="col-sm-9 col-md-6">
-                <input type="text" class="form-control" name="name" id="contactName" placeholder="Name" value="JD" />
+                <input type="text" class="form-control" name="name" id="contactName" placeholder="Name" />
               </div>
             </div>
 
             <div class="form-group">
               <label for="contactEmail" class="col-sm-3 col-md-2 control-label">Email</label>
               <div class="col-sm-9 col-md-6">
-                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Email" value="mail@tutwow.com" />
+                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Email" />
               </div>
             </div>
 
             <div class="form-group">
               <label for="contactMessage" class="col-sm-3 col-md-2 control-label">Message</label>
               <div class="col-sm-9">
-                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Message">asdflkjhasdklf asdlkfh askdljfh lkashf lkasdhf kljasdhf lkasdjh </textarea>
+                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Message"></textarea>
               </div>
             </div>
 
