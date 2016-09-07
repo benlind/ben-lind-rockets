@@ -58,9 +58,15 @@ gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src(['app/*.html', 'app/*.php'])
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cssnano()))
-    .pipe($.if(['*.html', '*.php'], $.htmlmin({collapseWhitespace: true})))
+    .pipe($.debug({title: '1:'}))
+    .pipe($.if('**/*.js', $.uglify()))
+    .pipe($.debug({title: '2:'}))
+    .pipe($.if('**/*.css', $.cssnano()))
+    .pipe($.debug({title: '3:'}))
+    .pipe($.if('**/*.php', $.phpMinify()))
+    .pipe($.debug({title: '4:'}))
+    .pipe($.if('**/*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe($.debug({title: '5:'}))
     .pipe(gulp.dest('dist'));
 });
 
