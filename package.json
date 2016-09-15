@@ -22,7 +22,6 @@
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^3.0.3",
     "gulp-load-plugins": "^0.10.0",
-    "gulp-php-minify": "^0.1.2",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.0",
     "gulp-size": "^1.2.1",
