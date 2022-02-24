@@ -1,5 +1,6 @@
-# Ben Lind's Personal Site
-This is the repository for the personal site of Ben Lind. I am a web developer, currently working at a freelance level but soon at a professional level as well. This website is primarily a place where I showcase my web development work.
+# Ben Lind's (Previous) Personal Site (With Rockets)
+
+This is the repository for my old personal site from my college days.
 
 ## Building
 To build this project from the source, run the following commands from the project root:
